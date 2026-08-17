@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Assistant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #answer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef4ff;
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .feature {
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🤖 AI Study Assistant</h1>
+    <p>Your smart companion for learning and revision</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Ask Your Study Question</h2>
+
+      <textarea id="question"
+        placeholder="Example: Explain Newton's Second Law in simple words..."></textarea>
+
+      <button onclick="getAnswer()">Get Answer</button>
+
+      <div id="answer">
+        Your answer will appear here.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📚 Features</h2>
+
+      <div class="features">
+
+        <div class="feature">
+          <h3>🤖 AI Help</h3>
+          <p>Get simple explanations for difficult topics.</p>
+        </div>
+
+        <div class="feature">
+          <h3>📝 Quick Revision</h3>
+          <p>Learn important concepts quickly.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🎯 Student Friendly</h3>
+          <p>Designed for easy and effective learning.</p>
+        </div>
+
+        <div class="feature">
+          <h3>💡 Smart Learning</h3>
+          <p>Ask questions and explore concepts.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 AI Study Assistant | Hackathon Project
+  </footer>
+
+  <script>
+    function getAnswer() {
+
+      const question =
+        document.getElementById("question").value.trim();
+
+      const answer =
+        document.getElementById("answer");
+
+      if (question === "") {
+        answer.innerHTML =
+          "⚠️ Please enter a study question first.";
+        return;
+      }
+
+      answer.innerHTML =
+        "<strong>AI Study Assistant:</strong><br><br>" +
+        "Your question is: <b>" + question + "</b><br><br>" +
+        "This demo assistant helps students understand " +
+        "topics in simple language. In the next version, " +
+        "it can be connected to a real AI model for " +
+        "personalized answers, quizzes and study plans.";
+    }
+  </script>
+
+</body>
+</html>
